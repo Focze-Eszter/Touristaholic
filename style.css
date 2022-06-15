@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+	--white: #b3e5ff;
+} 
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*::selection {
+	background: var(--white);
+	color: #000;
+}
+
+@font-face {
+  font-family: "Lacosta";
+  src: url("resources/fonts/Lacosta_PERSONAL_USE_ONLY.ttf") format("truetype"), /*p*/
+       url("resources/fonts/LacostaLine_PERSONAL_USE_ONLY.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AcryleScript";
+  src: url("resources/fonts/AcryleScript.ttf") format("truetype"); /*name*/
+}
+
+@font-face {
+  font-family: "Abel-Regular";
+  src: url("resources/fonts/Abel-Regular.ttf") format("truetype"); /*p*/
+}
+
+.container {
+	height: 100vh;
+	display: flex;
+}
+
+.container .carousel {
+	height: 100%;
+	overflow: hidden;
+}
+
+.container .carousel .carousel-slider {
+	display: flex;
+	width: 1000vw;
+	transition: 1s all ease-in-out;
+	-webkit-backface-visibility: hidden; /*flickering in Safari*/
+	transform: translateZ(0); /*flickering in Safari*/
+}
+
+.carousel-slider section {
+	position: relative;
+	display: flex;
+	flex-basis: 100%;
+	-webkit-backface-visibility :hidden; /*flickering in Safari*/
+	transform: translateZ(0); /*flickering in Safari*/
+	-webkit-transform-style: preserve-3d; /*flickering in Safari*/
+}
+
+.container .carousel .carousel-slider section img {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	filter: brightness(0.8);
+	background-size: cover;
+}	
+
+.container .carousel .carousel-slider section h1 {
+	position: absolute;
+	font-family: 'Lacosta';
+	font-size: 3rem;
+	color: whitesmoke;
+	top: 100px;
+	right: 50%;
+	transform: translateX(50%);
+	z-index: 1; 
+	letter-spacing: 3px; 
+}
+
+h1:before, h1:after {
+  content: "";
+  display: inline-block;
+  width: 50%;
+  margin: 0 .5em 0 -55%;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+  }
+
+  h1:after {
+  margin: 0 -55% 0 .5em;
+}
+
+.container .carousel .carousel-slider section .background {
+   position: relative;
+	width: 450px;
+    height: 260px;
+	top: 255px;
+	left: 120px;
+	border-style: dashed;
+	border-radius: 5px;
+	border-color: whitesmoke;
+  	background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+	-webkit-backdrop-filter: blur(8px);
+  	backdrop-filter: blur(8px);   
+}
+
+.container .carousel .carousel-slider section p {
+	position: absolute;
+	font-family: 'Abel-Regular';
+	width: 415px;
+	top: 250px;
+	left: 115px;
+	/*transform: translateX(50px);*/
+	font-size: 1.2rem;
+	color: whitesmoke;
+	text-shadow: 6px 2px 4px rgba(0,0,0,0.53);
+	letter-spacing: 1px;
+	line-height: 25px;
+	padding: 2rem 1.5rem;
+    z-index: 1;
+    text-indent: 50px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+      }
+
+ .container .carousel .carousel-slider section a {
+ 	position: absolute;
+ 	top: 460px; 
+ 	left: 300px;
+ 	text-decoration: none;
+ 	font-family: 'Abel-Regular';
+ 	font-size: 1.2rem;
+ 	color: deepskyblue;
+	padding: 10px 30px;
+	background-color: whitesmoke;
+	border-radius: 8px;
+	z-index: 1;
+ }
+
+ .container .carousel .carousel-slider section a:hover {
+ 	background-color: floralwhite;
+ }
+
+  .container .carousel .carousel-slider section .counter_page {
+  	position: absolute;
+  	font-family: "Poppins", sans-serif;
+	font-size: 1.5rem;
+	color: whitesmoke;
+	opacity: .2;
+	top: 30px;
+	left: 90%;
+	z-index: 1; 
+	letter-spacing: 3px; 
+	padding: 0;
+	max-width: 150px;
+	cursor: default;
+}
+
+.tourist .lady {
+	position: absolute;
+	height: 600px;
+	width: 500px;
+	right: 32vw;
+	transform: translateX(32vw);
+	bottom: 0;
+
+  	animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                transform:
+                perspective(300px)
+                translate3d(0px, 0px, 100px)
+                scale(2.0, 2.0);
+                transition: 0.2s ease-in-out transform; 
+				}
+            
+            100% {
+                opacity: 1;
+                transform: translate3d(0px, 0px, 100px) scale(1);
+                z-index: 10;
+              }
+    }
+
+.controls .button {
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+}
+
+.controls .left {
+	left: 50px;
+}
+
+.controls .right {
+	right: 50px;
+} 
